@@ -1,0 +1,12 @@
+/// excel help
+https://excel.tips.net/T003281_Extracting_URLs_from_Hyperlinks.html
+
+/// original dataset
+https://www.kaggle.com/vipulgote4/oscars-nominated-movies-from-2000-to-2017
+
+/// date comparison for SQL code
+https://database.guide/sql-greater-than-operator-for-beginners/
+
+/// date data types explained
+https://www.w3schools.com/sql/sql_dates.asp
+
