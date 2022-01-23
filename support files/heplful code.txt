@@ -1,0 +1,14 @@
+code for URL extraction function:
+
+///////
+Function GetURL(rng As Range) As String
+    On Error Resume Next
+    GetURL = rng.Hyperlinks(1).Address
+End Function
+///////
+
+code for stripping extra white spaces around data
+
+///////
+
+///////
