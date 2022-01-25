@@ -1,12 +1,12 @@
-<h2>Find a Quote...</h2>
+<h2>Find a movie...</h2>
 
     <p>
-        Please use the quick search option above to find quotes.  Try...
+        Please use the quick search option above to find movies.  Try...
     </p>
 
     <ul>
-        <li>Typing part of an author's name</li>
-        <li>Typing in a subject such as 'love' or 'life'</li>
+        <li>Typing part of a director's name</li>
+        <li>Typing in a genre such as 'adventure' or 'thriller'</li>
     </ul>
 
     <p>
