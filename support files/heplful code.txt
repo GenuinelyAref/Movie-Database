@@ -7,7 +7,8 @@ Function GetURL(rng As Range) As String
 End Function
 ///////
 
-code for stripping extra white spaces around data
+
+code 
 
 ///////
 
