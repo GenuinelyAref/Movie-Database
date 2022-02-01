@@ -1,15 +1,15 @@
-﻿Certificate,CertificateID
-G,1
-PG,2
-PG13,3
-M,4
-R,5
-R13,6
-R15,7
-R16,8
-R18,9
-RP13,10
-RP16,11
-TV-MA,12
-Unrated,13
-Not Rated,14
+﻿CertificateID,Certificate
+1,G
+2,PG
+3,PG13
+4,M
+5,R
+6,R13
+7,R15
+8,R16
+9,R18
+10,RP13
+11,RP16
+12,TV-MA
+13,Unrated
+14,Not Rated
