@@ -9,9 +9,9 @@
 
     <div class="linkwrapper">
         <div class="commonsearches">
-            <a href="index.php?page=showall">All</a> |
+            <a href="index.php?page=home">Home Page</a> |
             <a href="index.php?page=recent">Recent</a> |
-            <a href="index.php?page=random">Random</a>
+            <a href="index.php?page=showall">Show All</a>
         </div>  <!-- / common searches -->
 
         <div class="topsearch">
