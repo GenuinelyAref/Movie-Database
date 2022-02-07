@@ -20,12 +20,22 @@ do {
 
     // director name...
     $full_name = $first." ".$middle." ".$last;
-
     ?>
 
     <div class="results">
         <p>
-            <?php echo $movie; ?>
+            <!-- movie name -->
+            <b><?php echo $movie; ?></b>
+
+            <!-- double line break -->
+            <br /><br />
+
+            <!-- release date -->
+            <b>Release Date:</b>
+            <?php
+            $release_date = date("F j, Y", strtotime($find_rs['Release Date']));
+            echo $release_date;
+            ?>
 
             <!-- line break -->
             <br />
