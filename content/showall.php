@@ -84,6 +84,12 @@ do {
             ?>
 
         </p> <!-- end of movie, release date, director and certificate <p> tag-->
+
+        <!-- Duration -->
+        <p>
+            <?php echo $find_rs['Duration']; ?> minutes long
+        </p>
+
         <!-- genre tags go here -->
         <?php include 'show_genres.php'; ?>
 
