@@ -97,6 +97,15 @@ do {
 
           <!-- line break -->
           <br />
+
+          <!-- Gross -->
+          <b>Gross:</b>
+          $<?php echo $find_rs['Gross']; ?>
+
+
+          <!-- line break -->
+          <br />
+
         <!-- genre tags go here -->
         <?php include 'show_genres.php'; ?>
 
