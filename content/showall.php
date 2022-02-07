@@ -40,8 +40,9 @@ do {
             <!-- line break -->
             <br />
 
+            <!-- director details -->
             <!-- only one director is associated with the movie -->
-            Directed by:
+            <b>Directed by:</b>
             <a href="index.php?page=director&directorID=<?php echo $find_rs['DirectorID_1']; ?>">
               <?php echo $full_name; ?>
             </a>
