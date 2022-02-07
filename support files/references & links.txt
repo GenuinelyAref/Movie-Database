@@ -10,3 +10,8 @@ https://database.guide/sql-greater-than-operator-for-beginners/
 /// date data types explained
 https://www.w3schools.com/sql/sql_dates.asp
 
+/// exemplar for website layout
+https://www.imdb.com/title/tt0111161/
+
+/// date format conversion
+https://www.php.net/manual/en/function.date.php
