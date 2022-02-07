@@ -71,6 +71,18 @@ do {
             ?>
 
         </p> <!-- end of director <p> tag -->
+            <!-- line break -->
+            <br />
+
+            <!-- certificate -->
+            <?php
+            $certificateID_db = $find_rs['CertificateID'];
+            $certificate_sql = "SELECT * FROM `certificate_movie`
+            WHERE `CertificateID` = '$certificateID_db'";
+            $certificate_query = mysqli_query($dbconnect, $certificate_sql);
+            $certificate_rs = mysqli_fetch_assoc($certificate_query);
+            echo "<b>".$certificate_rs['Certificate']."</b>";
+            ?>
 
         <!-- genre tags go here -->
         <?php include 'show_genres.php'; ?>
