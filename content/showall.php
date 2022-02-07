@@ -90,6 +90,13 @@ do {
             <?php echo $find_rs['Duration']; ?> minutes long
         </p>
 
+        <!-- Metascore -->
+        <p>
+          <b>Metascore:</b>
+          <u><?php echo $find_rs['Metascore']; ?></u> / 100
+
+          <!-- line break -->
+          <br />
         <!-- genre tags go here -->
         <?php include 'show_genres.php'; ?>
 
