@@ -70,7 +70,6 @@ do {
             }
             ?>
 
-        </p> <!-- end of director <p> tag -->
             <!-- line break -->
             <br />
 
@@ -84,6 +83,7 @@ do {
             echo "<b>".$certificate_rs['Certificate']."</b>";
             ?>
 
+        </p> <!-- end of movie, release date, director and certificate <p> tag-->
         <!-- genre tags go here -->
         <?php include 'show_genres.php'; ?>
 
