@@ -78,6 +78,11 @@ do {
         <!-- line break -->
         <br />
 
+        <!-- Synopsis -->
+        <b>Synopsis</b>
+        <p>
+          <?php echo $find_rs['Synopsis']; ?>
+        </p>
 
     </div>
 
