@@ -23,13 +23,11 @@ do {
     ?>
 
     <div class="results">
-        <p>
+        <div class="movie_title">
             <!-- movie name -->
             <b><?php echo $movie; ?></b>
-
-            <!-- double line break -->
-            <br /><br />
-
+        </div>
+        <p>
             <!-- release date -->
             <b>Release Date:</b>
             <?php
