@@ -39,7 +39,6 @@ do {
             <br />
 
             <!-- director details -->
-            <!-- only one director is associated with the movie -->
             <b>Directed by:</b>
             <a href="index.php?page=director&directorID=<?php echo $find_rs['DirectorID_1']; ?>">
               <?php echo $full_name; ?>
@@ -81,7 +80,7 @@ do {
             echo "<b>".$certificate_rs['Certificate']."</b>";
             ?>
 
-        </p> <!-- end of movie, release date, director and certificate <p> tag-->
+        </p> <!-- end of release date, director and certificate <p> tag-->
 
         <!-- Duration -->
         <p>
