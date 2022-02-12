@@ -229,3 +229,7 @@ input {
   border: solid 1px #000;
   border-radius: 5px;
 }
+
+.movie_title {
+  font-size: 22pt;
+}
