@@ -18,3 +18,12 @@ https://www.php.net/manual/en/function.date.php
 
 /// metascore explained
 https://www.metacritic.com/about-metascores
+
+/// icons for USA ratings (unrated, not rated and PG-13)
+https://developer.apple.com/documentation/tvml/movie-rating-icons-united-states
+
+/// wikimedia commons PG13 image sources
+https://commons.wikimedia.org/wiki/File:RATED_PG-13.svg
+
+/// NZ rating for "Leviathan"
+https://www.flicks.co.nz/movie/leviathan/
