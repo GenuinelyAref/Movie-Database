@@ -13,23 +13,23 @@ $find_rs = mysqli_fetch_assoc($find_query);
 do {
 
     $movie = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Movie']);
-
-    $first = $find_rs['First'];
-    $middle = $find_rs['Middle'];
-    $last = $find_rs['Last'];
-
-    // director name...
-    $full_name = $first." ".$middle." ".$last;
     ?>
 
     <div class="results">
         <div class="movie_title">
             <!-- movie name -->
             <b><?php echo $movie; ?></b>
+
+            <!-- non-breaking space -->
+            &nbsp;-&nbsp;
+
+            <!-- movie certficate -->
+            <?php include 'show_certificate.php'; ?>
         </div>
         <p>
             <!-- release date -->
-            <b>Release Date:</b>
+            <img class="calendar_icon" title="Release Date" src="images/1.png">
+
             <?php
             $release_date = date("F j, Y", strtotime($find_rs['Release Date']));
             echo $release_date;
@@ -41,7 +41,14 @@ do {
             <!-- director details -->
             <b>Directed by:</b>
             <a href="index.php?page=director&directorID=<?php echo $find_rs['DirectorID_1']; ?>">
-              <?php echo $full_name; ?>
+              <?php
+              // director name...
+              $first = $find_rs['First'];
+              $middle = $find_rs['Middle'];
+              $last = $find_rs['Last'];
+              $full_name = $first." ".$middle." ".$last;
+
+              echo $full_name; ?>
             </a>
 
             <?php
@@ -70,21 +77,18 @@ do {
             <!-- line break -->
             <br />
 
-            <!-- certificate -->
-            <?php
-            $certificateID_db = $find_rs['CertificateID'];
-            $certificate_sql = "SELECT * FROM `certificate_movie`
-            WHERE `CertificateID` = '$certificateID_db'";
-            $certificate_query = mysqli_query($dbconnect, $certificate_sql);
-            $certificate_rs = mysqli_fetch_assoc($certificate_query);
-            echo "<b>".$certificate_rs['Certificate']."</b>";
-            ?>
+
 
         </p> <!-- end of release date, director and certificate <p> tag-->
 
         <!-- Duration -->
         <p>
-            <?php echo $find_rs['Duration']; ?> minutes long
+            <?php
+            $minutes = $find_rs['Duration'];
+            $hours = floor($minutes / 60);
+            $remaining_minutes = $minutes % 60;
+            echo $hours."h ".$remaining_minutes."m";
+            ?>
         </p>
 
         <!-- Metascore -->
@@ -103,48 +107,7 @@ do {
           <!-- line break -->
           <br />
 
-
-          <?php
-          // Nominations
-          $nominations = $find_rs['Nominations'];
-          if ($nominations > 1) {
-            ?>
-            <b><?php echo $nominations; ?></b> Nominations
-            <?php
-          }
-          elseif ($nominations == 1) {
-            ?>
-            <b>1</b> Nomination
-            <?php
-          }
-          else {
-            ?>
-            <b>No</b> Nominations
-            <?php
-          }
-
-          // join nominations and awards on same line
-          echo " and ";
-
-          // Awards
-          $awards = $find_rs['Awards'];
-          if ($awards > 1) {
-            ?>
-            <b><?php echo $awards; ?></b> Awards
-            <?php
-          }
-          elseif ($awards == 1) {
-            ?>
-            <b>1</b> Award
-            <?php
-          }
-          else {
-            ?>
-            <b>no</b> Awards
-            <?php
-          }
-          ?>
-
+          <?php include 'show_awards_nominations.php'; ?>
 
         </p>
 
