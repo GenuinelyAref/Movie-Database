@@ -87,8 +87,8 @@ do {
 
         <!-- Metascore -->
         <p>
-          <b>Metascore:</b>
-          <u><?php echo $find_rs['Metascore']; ?></u> / 100
+
+          <?php include 'show_metascore.php'; ?>
 
           <!-- line break -->
           <br />
