@@ -252,3 +252,25 @@ input {
   border-radius: 10px;
   margin-right: 20px;
 }
+
+.metascore {
+  font-size: 25px;
+}
+
+.metascore_value {
+  padding: 5px;
+  border-radius: 7px;
+  border: solid 2px #000000;
+}
+
+.metascore_scale {
+  font-size: 13px;
+}
+
+.error {
+  background-color: #ffcece;
+  color: #721a1a;
+  border-radius: 10px;
+  padding: 10px;
+  border: solid 1px #721a1a;
+}
