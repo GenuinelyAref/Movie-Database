@@ -1,40 +1,30 @@
 <?php
-// Nominations
 $nominations = $find_rs['Nominations'];
-if ($nominations > 1) {
-  ?>
-  <b><?php echo $nominations; ?></b> Nominations
-  <?php
-}
-elseif ($nominations == 1) {
-  ?>
-  <b>1</b> Nomination
-  <?php
-}
-else {
-  ?>
-  <b>No</b> Nominations
-  <?php
+// if nominations are equal to 1, remove pluralising s
+$nominations_add_s = "s";
+if ($nominations == 1) {
+  $nominations_add_s = "";
 }
 
-// join nominations and awards on same line
-echo " and ";
-
-// Awards
 $awards = $find_rs['Awards'];
-if ($awards > 1) {
-  ?>
-  <b><?php echo $awards; ?></b> Awards
-  <?php
+// if awards are equal to 1, remove pluralising s
+$awards_add_s = "s";
+if ($awards == 1) {
+  $awards_add_s = "";
 }
-elseif ($awards == 1) {
-  ?>
-  <b>1</b> Award
-  <?php
+
+// Nominations
+if ($nominations > 0) {
+  if ($awards > 0) {
+    echo $nominations." nomination".$nominations_add_s." and ".$awards." award".$awards_add_s;
+  }
+  else {
+    echo $nominations." nomination".$nominations_add_s;
+  }
 }
 else {
-  ?>
-  <b>no</b> Awards
-  <?php
+  if ($awards > 0) {
+    echo $awards." award".$awards_add_s;
+  }
 }
 ?>
