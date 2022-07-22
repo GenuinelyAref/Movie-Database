@@ -27,13 +27,7 @@ do {
             <?php include 'show_certificate.php'; ?>
         </div>
         <p>
-            <!-- release date -->
-            <img class="calendar_icon" title="Release Date" src="images/1.png">
-
-            <?php
-            $release_date = date("F j, Y", strtotime($find_rs['Release Date']));
-            echo $release_date;
-            ?>
+            <?php include 'show_release_date.php'; ?>
 
             <!-- line break -->
             <br />
