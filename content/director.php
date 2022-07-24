@@ -17,9 +17,15 @@ $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
 
 // the following code is to call the director's details from the director table
-$all_directors_sql = "SELECT * FROM `director_movie` WHERE `DirectorID` = $director_to_find";
-$all_directors_query = mysqli_query($dbconnect, $all_directors_sql);
-$all_directors_rs = mysqli_fetch_assoc($all_directors_query);
+$directors_sql = "SELECT * FROM `director_movie` WHERE `DirectorID` = $director_to_find";
+$directors_query = mysqli_query($dbconnect, $directors_sql);
+$directors_rs = mysqli_fetch_assoc($directors_query);
+
+$director_countryid = $directors_rs['CountryID'];
+// get country names
+$countries_sql = "SELECT * FROM `country_movie` WHERE `Country_ID` = $director_countryid";
+$countries_query = mysqli_query($dbconnect, $countries_sql);
+$countries_rs = mysqli_fetch_assoc($countries_query);
 ?>
 
 <!-- line break-->
@@ -28,8 +34,28 @@ $all_directors_rs = mysqli_fetch_assoc($all_directors_query);
 <!-- Director name for 'about director' -->
 <div class="about">
   <h2>
-    <?php echo $all_directors_rs['First']." ".$all_directors_rs['Middle']." ".$all_directors_rs['Last'];?>
+    <?php echo $directors_rs['First']." ".$directors_rs['Middle']." ".$directors_rs['Last'];?>
   </h2>
+
+
+  <?php
+  if ($directors_rs['YOB'] != 0 AND $directors_rs['CountryID'] != 0) {
+    ?>
+    <p><b>Born:</b> <?php echo $directors_rs['YOB'].", ".$countries_rs['Country']; ?></p>
+    <?php
+  }
+  elseif ($directors_rs['YOB'] != 0 AND $directors_rs['CountryID'] = 0) {
+    ?>
+    <p><b>Born:</b> <?php echo $directors_rs['YOB']?></p>
+    <?php
+  }
+  elseif ($directors_rs['YOB'] = 0 AND $directors_rs['CountryID'] != 0) {
+    ?>
+    <p><b>Born:</b> <?php echo $countries_rs['Country']; ?></p>
+    <?php
+  }
+  ?>
+
 </div>
 
 <!-- line break-->
@@ -56,13 +82,7 @@ do {
             <?php include 'show_certificate.php'; ?>
         </div>
         <p>
-            <!-- release date -->
-            <img class="calendar_icon" title="Release Date" src="images/1.png">
-
-            <?php
-            $release_date = date("F j, Y", strtotime($find_rs['Release Date']));
-            echo $release_date;
-            ?>
+            <?php include 'show_release_date.php'; ?>
 
             <!-- line break -->
             <br />
@@ -123,8 +143,8 @@ do {
 
         <!-- Metascore -->
         <p>
-          <b>Metascore:</b>
-          <u><?php echo $find_rs['Metascore']; ?></u> / 100
+
+          <?php include 'show_metascore.php'; ?>
 
           <!-- line break -->
           <br />
