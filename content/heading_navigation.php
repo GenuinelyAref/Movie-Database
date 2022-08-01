@@ -36,7 +36,7 @@
                 ?>
 
                   <!-- plus button for add entry -->
-                  <a href="index.php?page=../admin/new_movie" title="Add a movie"><i class="fa fa-plus fa-2x"></i></a>
+                  <a href="index.php?page=../admin/new_movie_part_one" title="Add a movie"><i class="fa fa-plus fa-2x"></i></a>
 
                   <!-- non-breaking space -->
                   &nbsp; &nbsp;
