@@ -7,7 +7,7 @@ body {
 
 /* Box (for corners & padding) */
 .box {
-    padding-left: 20px;
+    padding: 0px 20px;
     /* border-radius: 10px; */
     background-color: #ddd;
 }
@@ -277,4 +277,52 @@ input {
 
 input[type="submit"]:hover {
     background-color: #ffd575;
+}
+
+
+select {
+  height: 40px;
+  padding: 5px;
+}
+
+.progress_divs {
+  margin-top: 10px;
+  background-color: #888;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "text bar_one bar_two bar_three";
+  grid-gap: 4px;
+}
+
+.progress_bar_text {
+  grid-area: text;
+}
+
+.first_bar {
+  grid-area: bar_one;
+}
+
+.second_bar {
+  grid-area: bar_two;
+}
+
+.third_bar {
+  grid-area: bar_three;
+}
+
+.progress_rectangle_complete {
+  background-color: green;
+  border:2px solid #a9a9a9;
+}
+
+.progress_rectangle_current {
+  background-color: #D3D3D3;
+  border:5px solid #a9a9a9;
+}
+.progress_rectangle_incomplete {
+  background-color: #D3D3D3;
+  border:2px solid #a9a9a9;
 }
