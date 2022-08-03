@@ -8,7 +8,7 @@ if (isset($_SESSION['admin'])) {
 
   list($director_ID_one, $director_ID_two) = $directors_array;
 
-  if ($director_ID_two == "unknown") {
+  if ($director_ID_two == "none") {
     echo "1 director was chosen, with the ID $director_ID_one";
   }
   else {

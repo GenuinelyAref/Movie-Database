@@ -10,11 +10,11 @@ if (isset($_SESSION['admin'])) {
 
     if ($double_director == "no") {
       $director_ID_1 = mysqli_real_escape_string($dbconnect, $_POST['director']);
-      $director_ID_2 = "unknown";
+      $director_ID_2 = "none";
     }
     else {
-      $director_ID_1 = mysqli_real_escape_string($dbconnect, $_POST['co-diretor-one']);
-      $director_ID_2 = mysqli_real_escape_string($dbconnect, $_POST['co-diretor-two']);
+      $director_ID_1 = mysqli_real_escape_string($dbconnect, $_POST['co-director-one']);
+      $director_ID_2 = mysqli_real_escape_string($dbconnect, $_POST['co-director-two']);
     }
     $directors_array = array($director_ID_1, $director_ID_2);
 
@@ -78,13 +78,13 @@ else {
       <?php
     }
     else {
-      $number_of_directors = 2;
       ?>
       <!-- two directors -->
       <h3>Choose your directors:</h3>
       <!-- co-director 1 -->
       <div>
         <b>Co-director 1:</b> &nbsp;
+
         <!-- dropdown menu -->
         <select name="co-diretor-one">
             <!-- default option (new director) -->
