@@ -5,6 +5,10 @@ if (isset($_SESSION['admin'])) {
 
   $double_director = $_SESSION['Double_Director'];
 
+  $has_errors = "no";
+  $director_selection_error = "no-error";
+  $director_selection_field = "form-ok";
+
   // Code below executes when the form is submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -16,15 +20,20 @@ if (isset($_SESSION['admin'])) {
       $director_ID_1 = mysqli_real_escape_string($dbconnect, $_POST['co-director-one']);
       $director_ID_2 = mysqli_real_escape_string($dbconnect, $_POST['co-director-two']);
     }
-    $directors_array = array($director_ID_1, $director_ID_2);
+    // check that directors are not the same (except if they're both <add new director>)
+    if ($director_ID_1 == $director_ID_2 && $director_ID_1 != "unknown") {
+      $has_errors = "yes";
+      $director_selection_error = "error-text";
+      $director_selection_field = "form-error";
+    } // end check directors if statement
 
-    // create list of variables
-    /*
-    list($director_ID_one, $director_ID_two) = $directors_array;
-    */
+    // if no errors, go to next page
+    if ($has_errors != "yes") {
+      $directors_array = array($director_ID_1, $director_ID_2);
 
-    $_SESSION['Add_Movie']=$directors_array;
-    header('Location: index.php?page=../admin/add_entry');
+      $_SESSION['Add_Movie']=$directors_array;
+      header('Location: index.php?page=../admin/add_entry');
+    } // end no errors if statement
 
   } // end submit button pushed if
 
@@ -49,7 +58,6 @@ else {
 
     <?php
     if ($double_director == "no") {
-      $number_of_directors = 1;
       // get directors from database
       $all_directors_sql = "SELECT * FROM `director_movie` ORDER BY `Last` ASC";
       $all_directors_query = mysqli_query($dbconnect, $all_directors_sql);
@@ -60,7 +68,7 @@ else {
       <div>
         <b>Movie Director:</b> &nbsp;
         <!-- dropdown menu -->
-        <select name="director">
+        <select name="director" class="<?php echo $first_field; ?>">
             <!-- default option (new director) -->
             <option value="unknown" selected>New Director</option>
             <!-- existing director -->
@@ -81,12 +89,21 @@ else {
       ?>
       <!-- two directors -->
       <h3>Choose your directors:</h3>
+
+      <!-- director error message -->
+      <div class="<?php echo $director_selection_error; ?>">
+          You can't pick the same director twice.
+          <br>
+          Please try again
+          <br><br>
+      </div>
+
       <!-- co-director 1 -->
       <div>
         <b>Co-director 1:</b> &nbsp;
 
         <!-- dropdown menu -->
-        <select name="co-diretor-one">
+        <select name="co-director-one" class="<?php echo $director_selection_field; ?>">
             <!-- default option (new director) -->
             <option value="unknown" selected>New Director</option>
             <!-- existing director -->
@@ -112,7 +129,7 @@ else {
       <div>
         <b>Co-director 2:</b> &nbsp;
         <!-- dropdown menu -->
-        <select name="co-diretor-two">
+        <select name="co-director-two" class="<?php echo $director_selection_field; ?>">
             <!-- default option (new director) -->
             <option value="unknown" selected>New Director</option>
             <!-- existing director -->
