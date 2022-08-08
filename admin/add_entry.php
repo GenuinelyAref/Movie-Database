@@ -61,3 +61,22 @@ else {
 } // end user not logged in else
 
 ?>
+
+<h1>Add a Movie</h1>
+<p>
+    Fill out the details for your movie.
+</p>
+
+<form autocomplete="off" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/add_entry");?>">
+    <!-- TEMPLATE error message -->
+    <div class="<?php echo $template_error; ?>">
+        This field can't be blank
+    </div>
+
+    <!-- TEMPLATE -->
+    <div class="input-text-box"> <!-- class not added in CSS yet -->
+        <input type="text" class="add-field <?php echo $template_field; ?>" value="<?php echo $template; ?>" name="template" placeholder="Template" />
+    </div>
+
+
+</form>
