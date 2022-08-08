@@ -50,7 +50,7 @@ else {
 <p>
     To add a movie, first select the director(s), then press the 'next' button. If the
     director(s) is(are) not in the list, please choose the 'New Director' option. To quickly
-    find an director, click in the box below and start typing their <b>last</b> name.
+    find a director, click in the box below and start typing their <b>last</b> name.
 </p>
 
 
