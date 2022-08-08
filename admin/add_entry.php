@@ -9,10 +9,10 @@ if (isset($_SESSION['admin'])) {
   list($director_ID_one, $director_ID_two) = $directors_array;
 
   if ($director_ID_two == "none") {
-    echo "1 director was chosen, with the ID $director_ID_one";
+    $number_of_directors = 1;
   }
   else {
-    echo "2 directors were chosen, with the IDs $director_ID_one and $director_ID_two";
+    $number_of_directors = 2;
   }
 
   // Get genre list from database
@@ -29,7 +29,6 @@ if (isset($_SESSION['admin'])) {
   $synopsis = "";
 
   // optional fields
-  $second_director_ID = "";
   $genre_2 = "";
   $genre_3 = "";
   $metascore = "";
