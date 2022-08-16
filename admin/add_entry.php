@@ -26,12 +26,12 @@ if (isset($_SESSION['admin'])) {
   $certificate = "";
   $genre_1 = "";
   $duration = "";
+  $metascore = "";
   $synopsis = "";
 
   // optional fields
   $genre_2 = "";
   $genre_3 = "";
-  $metascore = "";
   $gross = "";
   $awards = "";
   $nominations = "";
@@ -51,6 +51,11 @@ if (isset($_SESSION['admin'])) {
   // LEFT HERE
   // LEFT HERE
 
+    $metascore = mysqli_real_escape_string($dbconnect, $_POST['metascore']);
+    if (!is_numeric($metascore) || $metascore < 0 || $metascore > 100) {
+      $has_errors = "yes";
+      $metascore_error = "error-text";
+      $metascore_field = "form-error";
 
 } // end user logged in if
 
@@ -75,6 +80,17 @@ else {
     <!-- TEMPLATE -->
     <div class="input-text-box"> <!-- class not added in CSS yet -->
         <input type="text" class="add-field <?php echo $template_field; ?>" value="<?php echo $template; ?>" name="template" placeholder="Template" />
+      <!-- Metascore input error message -->
+      <div class="error-8 <?php echo $metascore_error; ?>">
+          This field can't be blank
+      </div>
+
+      <!-- Metascore input box -->
+      <div class="metascore-box">
+        <img style="height: 39px; width: auto;" title="Metacritic Logo" src="images/metacritic-4.png">
+        <input style="vertical-align: top; width: 120px;" type="text" class="<?php echo $metascore_field; ?>" value="<?php echo $metascore; ?>" name="metascore" placeholder="Metascore" />
+        <span style="font-size: 25px; vertical-align: super;">&nbsp;/100</span>
+      </div>
     </div>
 
 

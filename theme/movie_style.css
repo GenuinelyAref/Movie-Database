@@ -345,3 +345,11 @@ select {
   color: darkred;
   font-style: italic;
 }
+
+.error-8 {
+  grid-area: error-8;
+}
+
+.metascore-box {
+  grid-area: box-8;
+}
