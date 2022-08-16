@@ -346,6 +346,24 @@ select {
   font-style: italic;
 }
 
+/* add-entry form styling */
+.input-text-boxes {
+  background-color: red;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "error-1 error-1 error-1 error-1 error-1 error-1"
+      "box-1 box-1 box-1 box-1 box-1 box-1"
+      "error-2 error-3 error-4 error-5 error-6 error-7"
+      "box-2 box-3 box-4 box-5 box-6 box-7"
+      "error-8 error-9 error-10 error-11 error-12 error-13"
+      "box-8 box-9 box-10 box-11 box-12 box-13"
+      "error-last error-last error-last error-last error-last error-last"
+      "box-last box-last box-last box-last box-last box-last";
+  grid-gap: 4px;
+}
 .error-8 {
   grid-area: error-8;
 }
