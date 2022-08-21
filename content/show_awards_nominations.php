@@ -15,16 +15,15 @@ if ($awards == 1) {
 
 // Nominations
 if ($nominations > 0) {
-  if ($awards > 0) {
-    echo $nominations." nomination".$nominations_add_s." and ".$awards." award".$awards_add_s;
-  }
-  else {
-    echo $nominations." nomination".$nominations_add_s;
-  }
+    ?>
+    <img src="images/nominations.png" class="content_icon" title="Nominations">
+    <?php
+    echo $nominations." nomination".$nominations_add_s."<br>";
 }
-else {
-  if ($awards > 0) {
+if ($awards > 0) {
+    ?>
+    <img src="images/awards.png" class="content_icon" title="Nominations">
+    <?php
     echo $awards." award".$awards_add_s;
-  }
 }
 ?>
