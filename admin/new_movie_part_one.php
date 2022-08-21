@@ -51,7 +51,7 @@ $double_director = "unknown";
 <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/new_movie_part_one");?>">
   <h3>How many directors worked on the movie?</h3>
     <div>
-      <input type="radio" name="double_director" value="no"/> One director
+      <input type="radio" name="double_director" value="no" checked/> One director
       </br>
       </br>
       <input type="radio" name="double_director" value="yes"/> Two co-directors
