@@ -41,17 +41,17 @@ $countries_rs = mysqli_fetch_assoc($countries_query);
   <?php
   if ($directors_rs['YOB'] != 0 AND $directors_rs['CountryID'] != 0) {
     ?>
-    <p><b>Born:</b> <?php echo $directors_rs['YOB'].", ".$countries_rs['Country']; ?></p>
+    <p><strong>Born:</strong> <?php echo $directors_rs['YOB'].", ".$countries_rs['Country']; ?></p>
     <?php
   }
   elseif ($directors_rs['YOB'] != 0 AND $directors_rs['CountryID'] = 0) {
     ?>
-    <p><b>Born:</b> <?php echo $directors_rs['YOB']?></p>
+    <p><strong>Born:</strong> <?php echo $directors_rs['YOB']?></p>
     <?php
   }
   elseif ($directors_rs['YOB'] = 0 AND $directors_rs['CountryID'] != 0) {
     ?>
-    <p><b>Born:</b> <?php echo $countries_rs['Country']; ?></p>
+    <p><strong>Born:</strong> <?php echo $countries_rs['Country']; ?></p>
     <?php
   }
   ?>

@@ -90,10 +90,10 @@ function country_job($dbconnect, $entity_1, $entity_2, $label_sg, $label_pl, $ta
         
     if ($num_entities == 1)
     {
-    echo "<b>".$label_sg."</b>: ";
+    echo "<strong>".$label_sg."</strong>: ";
     }
     
-    else { echo "<b>".$label_pl."</b>: ";}
+    else { echo "<strong>".$label_pl."</strong>: ";}
     
     foreach ($all_entities as $entity) {
     

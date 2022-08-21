@@ -50,7 +50,7 @@ else {
 <p>
     To add a movie, first select the director(s), then press the 'next' button. If the
     director(s) is(are) not in the list, please choose the 'New Director' option. To quickly
-    find a director, click in the box below and start typing their <b>last</b> name.
+    find a director, click in the box below and start typing their <strong>last</strong> name.
 </p>
 
 
@@ -66,7 +66,7 @@ else {
       ?>
       <!-- one director -->
       <div>
-        <b>Movie Director:</b> &nbsp;
+        <strong>Movie Director:</strong> &nbsp;
         <!-- dropdown menu -->
         <select name="director" class="<?php echo $first_field; ?>">
             <!-- default option (new director) -->
@@ -100,7 +100,7 @@ else {
 
       <!-- co-director 1 -->
       <div>
-        <b>Co-director 1:</b> &nbsp;
+        <strong>Co-director 1:</strong> &nbsp;
 
         <!-- dropdown menu -->
         <select name="co-director-one" class="<?php echo $director_selection_field; ?>">
@@ -127,7 +127,7 @@ else {
       </br>
       <!-- co-director 2 -->
       <div>
-        <b>Co-director 2:</b> &nbsp;
+        <strong>Co-director 2:</strong> &nbsp;
         <!-- dropdown menu -->
         <select name="co-director-two" class="<?php echo $director_selection_field; ?>">
             <!-- default option (new director) -->

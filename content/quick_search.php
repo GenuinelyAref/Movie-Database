@@ -151,7 +151,7 @@ else { // happens when there are no results
     <h2>No Results</h2>
 
     <div class="error">
-        Sorry - there are no quotes that match the search term <i><b><?php echo $quick_find ?></b></i>. Please try again.
+        Sorry - there are no quotes that match the search term <i><strong><?php echo $quick_find ?></strong></i>. Please try again.
     </div>
 
     <p>&nbsp;</p>
