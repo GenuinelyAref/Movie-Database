@@ -15,15 +15,13 @@
     $genre_rs = mysqli_fetch_assoc($genre_query);
 
     if ($genre != 0) {
-
-        ?>
-
-      <!-- show genres -->
+      ?>
+      <!-- link genre to its genre page -->
       <span class="tag">
-          <a href="index.php?page=genre&genreID=<?php echo $genre_rs['GenreID']; ?>">
-            <?php echo $genre_rs['Genre']; ?>
-          </a>
-      </span> &nbsp;
+        <a class="genre-tag" href="index.php?page=genre&genreID=<?php echo $genre_rs['GenreID']; ?>">
+          <?php echo $genre_rs['Genre']; ?>
+        </a>
+      </span>&nbsp;
     <?php
 
   } // end of if statement

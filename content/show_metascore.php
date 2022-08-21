@@ -16,8 +16,6 @@ else {
 ?>
 
 
-<div class="metascore">
-  <span class="metascore_value" style="background-color: <?php echo $background_colour; ?>;">
-    <strong><?php echo $find_rs['Metascore']; ?></strong> <span class="metascore_scale">/ 100</span>
-  </span>
+<div class="metascore_div" style="background-color: <?php echo $background_colour; ?>;">
+    <span class="metascore"><?php echo $find_rs['Metascore']; ?></span>
 </div>
