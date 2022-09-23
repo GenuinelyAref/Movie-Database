@@ -15,7 +15,6 @@
 
     <ul>
         <li>browse through <a href="index.php?page=showall">all the movies</a></li>
-        <li>grab <a href="index.php?page=random">ten random movies</a></li>
         <li>See movies that have <a href="index.php?page=recent">recently been added</a> to this database.</li>
     </ul>
 
