@@ -138,6 +138,11 @@ body {
 
 /* #### Links Styling  #### */
 
+a.heading:link, a.heading:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Navigation Links */
 a.topnav {font-weight: bold;}
 a.topnav:link, a.topnav:visited {color: #007c72;} /*dark teal */
@@ -232,6 +237,7 @@ input {
 
 .movie_title {
   font-size: 22pt;
+  margin-bottom: 25px;
 }
 
 .certficate_icons {
@@ -239,10 +245,8 @@ input {
   width: auto;
 }
 
-.calendar_icon {
+.content_icon {
   height: 16px;
-  width: auto;
-  border-top: 5px;
 }
 
 .about {
@@ -254,17 +258,23 @@ input {
 }
 
 .metascore {
+  font-family: Arial;
+  color: #FFF;
   font-size: 25px;
 }
 
-.metascore_value {
-  padding: 5px;
-  border-radius: 7px;
-  border: solid 2px #000000;
+.metascritic-logo-contents {
+  height: 55px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
-.metascore_scale {
-  font-size: 13px;
+.metascore_div {
+  text-align: center;
+  display: inline-block;
+  line-height:50px;
+  width: 50px;
+  height: 50px;
 }
 
 .error {
@@ -348,14 +358,13 @@ select {
 
 /* add-entry form styling */
 .input-text-boxes {
-  background-color: red;
   padding: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-      "error-1 error-1 error-1 error-1 error-1 error-1"
-      "box-1 box-1 box-1 box-1 box-1 box-1"
+      "error-1 error-1 error-1 error-1 error-1 error-extra"
+      "box-1 box-1 box-1 box-1 box-1 box-extra"
       "error-2 error-3 error-4 error-5 error-6 error-7"
       "box-2 box-3 box-4 box-5 box-6 box-7"
       "error-8 error-9 error-10 error-11 error-12 error-13"
@@ -364,10 +373,256 @@ select {
       "box-last box-last box-last box-last box-last box-last";
   grid-gap: 4px;
 }
+
+.new-director-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "form-1 form-2";
+}
+
+
+.error-1 {
+  grid-area: error-1;
+}
+
+.movie-name-box {
+  grid-area: box-1;
+}
+
+.error-2 {
+  grid-area: error-2;
+}
+
+.certificate-box {
+  grid-area: box-2;
+}
+
+.error-3 {
+  grid-area: error-3;
+}
+
+.release-date-box {
+  grid-area: box-3;
+}
+
+.error-4 {
+  grid-area: error-4;
+}
+
+.genre-1-box {
+  grid-area: box-4;
+}
+
+.genre-2-box {
+  grid-area: box-5;
+}
+
+.genre-3-box {
+  grid-area: box-6;
+}
+
 .error-8 {
   grid-area: error-8;
 }
 
 .metascore-box {
   grid-area: box-8;
+}
+
+.error-9 {
+  grid-area: error-9;
+}
+
+.gross-box {
+  grid-area: box-9;
+}
+
+.error-10 {
+  grid-area: error-10;
+}
+
+.nominations-box {
+  grid-area: box-10;
+}
+
+.error-11 {
+  grid-area: error-11;
+}
+
+.awards-box {
+  grid-area: box-11;
+}
+
+.error-12 {
+  grid-area: error-12;
+}
+
+.duration-box {
+  grid-area: box-12;
+}
+
+.error-synopsis {
+  grid-area: error-last;
+}
+
+.synopsis-box {
+  grid-area: box-last;
+}
+
+.align-input-box {
+  vertical-align: top;
+  float: right;
+}
+
+textarea, input[type=text], select, input[type=date] {
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+}
+
+textarea {
+  width: 90%;
+  max-width: 700px;
+}
+
+.new-director-small-width {
+  width: 90px;
+}
+
+.new-director-mid-width {
+  width: 250px;
+}
+
+.new-director-long-width {
+  width: 500px;
+}
+
+.new-director-spacing {
+  margin-bottom: 10px;
+}
+
+.new-director-one-form {
+  display: inline-block;
+  grid-area: form-1;
+}
+
+.new-director-two-form {
+  display: inline-block;
+  grid-area: form-2;
+}
+
+.genre-tag {
+  text-decoration: none;
+}
+
+.genre-tag:hover {
+  color: #007c72;
+}
+
+.tag:hover {
+  background-color: #ffd575;
+}
+
+.part-one-contents {
+  display: inline-block;
+  margin-right: 75px;
+}
+
+.part-two-contents {
+  display: inline-block;
+  margin-right: 75px;
+}
+
+.part-three-contents {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.all-content-parts {
+  margin-bottom: 25px;
+}
+
+.genre-content {
+  margin-bottom: 25px;
+}
+
+.new-director-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "form-1 form-2";
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "synopsis edit-tools";
+}
+
+.synopsis-div {
+  grid-area: synopsis;
+  display: inline-block;
+}
+
+.edit-tools {
+  grid-area: edit-tools;
+  text-align: right;
+  margin-top: 90px;
+}
+
+.edit-tools-director {
+  grid-area: edit-tools;
+  text-align: right;
+}
+
+.delete-button {
+  text-decoration: none;
+  background-color: #ff6969;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #ff0000;
+}
+
+.delete-text {
+  color: #000!important;
+  text-decoration: none;
+}
+
+.delete-text:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.cancel-button {
+  text-decoration: none;
+  background-color: #bfabab;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+
+.cancel-button:hover {
+  background-color: #6c6161;
+}
+
+.cancel-text {
+  color: #000!important;
+  text-decoration: none;
+}
+
+.cancel-text:hover {
+  color: #000;
+  text-decoration: none;
 }
