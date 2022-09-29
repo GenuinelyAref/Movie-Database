@@ -489,6 +489,12 @@ if (isset($_SESSION['admin'])) {
 
       } // end if there is one new director if statement
 
+      // If there is only one existing director, set ID to 0
+      if ($director_2_ID == "none") {
+        $director_2_ID = 0;
+      }
+
+
       // awards is not a compulsory field, so default to 0 if not specified
       if ($awards == "") {
         $awards = 0;
@@ -508,6 +514,7 @@ if (isset($_SESSION['admin'])) {
       $genreID_1 = get_ID($dbconnect, 'genre_movie', 'GenreID', 'Genre', $genre_1);
       $genreID_2 = get_ID($dbconnect, 'genre_movie', 'GenreID', 'Genre', $genre_2);
       $genreID_3 = get_ID($dbconnect, 'genre_movie', 'GenreID', 'Genre', $genre_3);
+
 
       // add entry to database
       $addentry_sql = "INSERT INTO `movie` (`ID`, `Release Date`, `Movie`, `DirectorID_1`, `DirectorID_2`, `CertificateID`, `GenreID_1`, `GenreID_2`, `GenreID_3`, `Metascore`, `Gross`, `Awards`, `Nominations`, `Duration`, `Synopsis`) VALUES
@@ -954,19 +961,23 @@ else {
 </form>
 
 <!-- script for autocomplete -->
+<script>
+
+<?php include 'autocomplete.php'; ?>
+
+// Arrays containing lists
+var all_genres =<?php print("$all_genres"); ?>;
+autocomplete(document.getElementById("genre1"), all_genres);
+autocomplete(document.getElementById("genre2"), all_genres);
+autocomplete(document.getElementById("genre3"), all_genres);
+
+</script>
 
 <?php
 
 if ($director_1_ID == $director_2_ID) {
   ?>
   <script>
-  <?php include 'autocomplete.php'; ?>
-
-  // Arrays containing lists
-  var all_genres =<?php print("$all_genres"); ?>;
-  autocomplete(document.getElementById("genre1"), all_genres);
-  autocomplete(document.getElementById("genre2"), all_genres);
-  autocomplete(document.getElementById("genre3"), all_genres);
 
   var all_countries = <?php print("$all_countries"); ?>;
   autocomplete(document.getElementById("country1"), all_countries);
@@ -978,13 +989,6 @@ if ($director_1_ID == $director_2_ID) {
 elseif ($director_1_ID == "unknown" || $director_2_ID == "unknown") {
   ?>
   <script>
-  <?php include 'autocomplete.php'; ?>
-
-  // Arrays containing lists
-  var all_genres =<?php print("$all_genres"); ?>;
-  autocomplete(document.getElementById("genre1"), all_genres);
-  autocomplete(document.getElementById("genre2"), all_genres);
-  autocomplete(document.getElementById("genre3"), all_genres);
 
   var all_countries = <?php print("$all_countries"); ?>;
   autocomplete(document.getElementById("country"), all_countries);
@@ -992,25 +996,8 @@ elseif ($director_1_ID == "unknown" || $director_2_ID == "unknown") {
   </script>
   <?php
 }
-else {
-  ?>
-  <script>
-  <?php include 'autocomplete.php'; ?>
-
-  // Arrays containing lists
-  var all_genres =<?php print("$all_genres"); ?>;
-  autocomplete(document.getElementById("genre1"), all_genres);
-  autocomplete(document.getElementById("genre2"), all_genres);
-  autocomplete(document.getElementById("genre3"), all_genres);
-
-  </script>
-  <?php
-}
-
- ?>
 
 
-<?php
 /*
 ?>
 
